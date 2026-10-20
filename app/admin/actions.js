@@ -1,6 +1,7 @@
 "use server";
 
 import { redirect } from "next/navigation";
+import { revalidatePath } from "next/cache";
 import { createAdminClient } from "@/lib/supabase/admin";
 
 export async function login(prevState, formData) {
@@ -97,5 +98,228 @@ export async function gantiPassword(prevState, formData) {
   } catch (err) {
     return { error: err.message || "Terjadi kesalahan saat mengganti password." };
   }
+}
+
+export async function tambahProduk(prevState, formData) {
+  const form = formData instanceof FormData ? formData : prevState;
+  const nama = form?.get("nama")?.toString().trim();
+  const hargaRaw = form?.get("harga");
+  const harga = parseInt(hargaRaw, 10);
+  const kategori = form?.get("kategori")?.toString().trim() || null;
+  const foto_url = form?.get("foto_url")?.toString().trim() || null;
+  const deskripsi = form?.get("deskripsi")?.toString().trim() || null;
+
+  if (!nama || isNaN(harga)) {
+    return { error: "Nama dan harga produk wajib diisi dengan benar." };
+  }
+
+  try {
+    const supabase = await createAdminClient();
+    const {
+      data: { user },
+      error: userError,
+    } = await supabase.auth.getUser();
+
+    if (userError || !user) {
+      return { error: "Akses ditolak: Anda harus login terlebih dahulu." };
+    }
+
+    const { error } = await supabase.from("produk").insert({
+      nama,
+      harga,
+      kategori,
+      foto_url,
+      deskripsi,
+    });
+
+    if (error) {
+      return { error: error.message || "Gagal menambah produk." };
+    }
+  } catch (err) {
+    return { error: err.message || "Terjadi kesalahan pada server." };
+  }
+
+  revalidatePath("/admin");
+  revalidatePath("/");
+  redirect("/admin");
+}
+
+export async function ubahProduk(prevState, formData) {
+  const form = formData instanceof FormData ? formData : prevState;
+  const id = form?.get("id");
+  const nama = form?.get("nama")?.toString().trim();
+  const hargaRaw = form?.get("harga");
+  const harga = parseInt(hargaRaw, 10);
+  const kategori = form?.get("kategori")?.toString().trim() || null;
+  const foto_url = form?.get("foto_url")?.toString().trim() || null;
+  const deskripsi = form?.get("deskripsi")?.toString().trim() || null;
+
+  if (!id || !nama || isNaN(harga)) {
+    return { error: "ID, nama, dan harga produk wajib diisi dengan benar." };
+  }
+
+  try {
+    const supabase = await createAdminClient();
+    const {
+      data: { user },
+      error: userError,
+    } = await supabase.auth.getUser();
+
+    if (userError || !user) {
+      return { error: "Akses ditolak: Anda harus login terlebih dahulu." };
+    }
+
+    const { error } = await supabase
+      .from("produk")
+      .update({
+        nama,
+        harga,
+        kategori,
+        foto_url,
+        deskripsi,
+      })
+      .eq("id", id);
+
+    if (error) {
+      return { error: error.message || "Gagal mengubah produk." };
+    }
+  } catch (err) {
+    return { error: err.message || "Terjadi kesalahan pada server." };
+  }
+
+  revalidatePath("/admin");
+  revalidatePath("/");
+  revalidatePath(`/produk/${id}`);
+  redirect("/admin");
+}
+
+export async function hapusProduk(formData) {
+  const id = formData.get("id");
+  if (!id) return;
+
+  const supabase = await createAdminClient();
+  const {
+    data: { user },
+    error: userError,
+  } = await supabase.auth.getUser();
+
+  if (userError || !user) {
+    throw new Error("Akses ditolak: Anda harus login terlebih dahulu.");
+  }
+
+  const { error } = await supabase.from("produk").delete().eq("id", id);
+  if (error) {
+    throw new Error(error.message || "Gagal menghapus produk.");
+  }
+
+  revalidatePath("/admin");
+  revalidatePath("/");
+}
+
+  if (!nama || isNaN(harga)) {
+    return { error: "Nama dan harga produk wajib diisi dengan benar." };
+  }
+
+  try {
+    const supabase = await createAdminClient();
+    const {
+      data: { user },
+      error: userError,
+    } = await supabase.auth.getUser();
+
+    if (userError || !user) {
+      return { error: "Akses ditolak: Anda harus login terlebih dahulu." };
+    }
+
+    const { error } = await supabase.from("produk").insert({
+      nama,
+      harga,
+      kategori,
+      foto_url,
+      deskripsi,
+    });
+
+    if (error) {
+      return { error: error.message || "Gagal menambah produk." };
+    }
+  } catch (err) {
+    return { error: err.message || "Terjadi kesalahan pada server." };
+  }
+
+  revalidatePath("/admin");
+  revalidatePath("/");
+  redirect("/admin");
+}
+
+export async function ubahProduk(prevState, formData) {
+  const form = formData instanceof FormData ? formData : prevState;
+  const id = form?.get("id");
+  const nama = form?.get("nama")?.toString().trim();
+  const hargaRaw = form?.get("harga");
+  const harga = parseInt(hargaRaw, 10);
+  const kategori = form?.get("kategori")?.toString().trim() || null;
+  const foto_url = form?.get("foto_url")?.toString().trim() || null;
+  const deskripsi = form?.get("deskripsi")?.toString().trim() || null;
+
+  if (!id || !nama || isNaN(harga)) {
+    return { error: "ID, nama, dan harga produk wajib diisi dengan benar." };
+  }
+
+  try {
+    const supabase = await createAdminClient();
+    const {
+      data: { user },
+      error: userError,
+    } = await supabase.auth.getUser();
+
+    if (userError || !user) {
+      return { error: "Akses ditolak: Anda harus login terlebih dahulu." };
+    }
+
+    const { error } = await supabase
+      .from("produk")
+      .update({
+        nama,
+        harga,
+        kategori,
+        foto_url,
+        deskripsi,
+      })
+      .eq("id", id);
+
+    if (error) {
+      return { error: error.message || "Gagal mengubah produk." };
+    }
+  } catch (err) {
+    return { error: err.message || "Terjadi kesalahan pada server." };
+  }
+
+  revalidatePath("/admin");
+  revalidatePath("/");
+  revalidatePath(`/produk/${id}`);
+  redirect("/admin");
+}
+
+export async function hapusProduk(formData) {
+  const id = formData.get("id");
+  if (!id) return;
+
+  const supabase = await createAdminClient();
+  const {
+    data: { user },
+    error: userError,
+  } = await supabase.auth.getUser();
+
+  if (userError || !user) {
+    throw new Error("Akses ditolak: Anda harus login terlebih dahulu.");
+  }
+
+  const { error } = await supabase.from("produk").delete().eq("id", id);
+  if (error) {
+    throw new Error(error.message || "Gagal menghapus produk.");
+  }
+
+  revalidatePath("/admin");
+  revalidatePath("/");
 }
 
