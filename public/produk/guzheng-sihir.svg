@@ -1,0 +1,27 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 600 600" role="img" aria-label="Guzheng Sihir Dawai Giok Hulala">
+  <defs>
+    <linearGradient id="bgHulala1" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#2d1b4e"/>
+      <stop offset="100%" stop-color="#1b1030"/>
+    </linearGradient>
+    <radialGradient id="magicGlow1" cx="50%" cy="40%" r="50%">
+      <stop offset="0%" stop-color="#a855f7" stop-opacity="0.4"/>
+      <stop offset="100%" stop-color="#2d1b4e" stop-opacity="0"/>
+    </radialGradient>
+  </defs>
+  <rect width="600" height="600" fill="url(#bgHulala1)"/>
+  <circle cx="300" cy="240" r="160" fill="url(#magicGlow1)"/>
+  <g transform="translate(230, 160)" stroke="#c084fc" stroke-width="8" fill="none" stroke-linecap="round" stroke-linejoin="round">
+    <path d="M20 120 C 40 40, 100 40, 120 120" stroke="#f472b6" stroke-width="6"/>
+    <line x1="40" y1="120" x2="40" y2="40"/>
+    <line x1="60" y1="120" x2="60" y2="30"/>
+    <line x1="80" y1="120" x2="80" y2="30"/>
+    <line x1="100" y1="120" x2="100" y2="40"/>
+    <path d="M-10 30 Q 0 30 0 20 Q 0 30 10 30 Q 0 30 0 40 Q 0 30 -10 30" fill="#facc15" stroke="none"/>
+    <path d="M130 20 Q 140 20 140 10 Q 140 20 150 20 Q 140 20 140 30 Q 140 20 130 20" fill="#38bdf8" stroke="none"/>
+    <circle cx="70" cy="15" r="4" fill="#f472b6" stroke="none"/>
+  </g>
+  <text x="300" y="470" text-anchor="middle" font-family="Plus Jakarta Sans, Arial, sans-serif" font-size="34" font-weight="700" fill="#f3e8ff">Guzheng Sihir</text>
+  <text x="300" y="515" text-anchor="middle" font-family="Plus Jakarta Sans, Arial, sans-serif" font-size="20" font-weight="500" fill="#c084fc">Hulala Music &amp; Magic</text>
+  <text x="300" y="555" text-anchor="middle" font-family="Plus Jakarta Sans, Arial, sans-serif" font-size="16" fill="#a855f7" opacity="0.8">Instrumen Sihir Harmoni Gaib</text>
+</svg>

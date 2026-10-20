@@ -1,0 +1,28 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 600 600" role="img" aria-label="Seruling Bambu Mistik Hulala">
+  <defs>
+    <linearGradient id="bgHulala2" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#14362a"/>
+      <stop offset="100%" stop-color="#0a1d16"/>
+    </linearGradient>
+    <radialGradient id="magicGlow2" cx="50%" cy="40%" r="50%">
+      <stop offset="0%" stop-color="#34d399" stop-opacity="0.35"/>
+      <stop offset="100%" stop-color="#14362a" stop-opacity="0"/>
+    </radialGradient>
+  </defs>
+  <rect width="600" height="600" fill="url(#bgHulala2)"/>
+  <circle cx="300" cy="240" r="160" fill="url(#magicGlow2)"/>
+  <g transform="translate(200, 160)" stroke="#34d399" stroke-width="6" fill="none" stroke-linecap="round" stroke-linejoin="round">
+    <line x1="20" y1="140" x2="180" y2="20" stroke-width="12" stroke="#6ee7b7"/>
+    <circle cx="65" cy="105" r="5" fill="#14362a"/>
+    <circle cx="95" cy="83" r="5" fill="#14362a"/>
+    <circle cx="125" cy="61" r="5" fill="#14362a"/>
+    <circle cx="155" cy="39" r="5" fill="#14362a"/>
+    <path d="M120 120 C 120 100, 150 100, 150 70" stroke="#facc15" stroke-width="4"/>
+    <circle cx="120" cy="120" r="10" fill="#facc15" stroke="none"/>
+    <path d="M150 70 L 175 75 L 175 110" stroke="#facc15" stroke-width="4"/>
+    <circle cx="175" cy="110" r="8" fill="#facc15" stroke="none"/>
+  </g>
+  <text x="300" y="470" text-anchor="middle" font-family="Plus Jakarta Sans, Arial, sans-serif" font-size="34" font-weight="700" fill="#ecfdf5">Seruling Mistik</text>
+  <text x="300" y="515" text-anchor="middle" font-family="Plus Jakarta Sans, Arial, sans-serif" font-size="20" font-weight="500" fill="#6ee7b7">Hulala Music &amp; Magic</text>
+  <text x="300" y="555" text-anchor="middle" font-family="Plus Jakarta Sans, Arial, sans-serif" font-size="16" fill="#34d399" opacity="0.8">Resonansi Bambu Mantra</text>
+</svg>

@@ -1,0 +1,34 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 600 600" role="img" aria-label="Modul Inti Kognitif AI Honglonglong">
+  <defs>
+    <linearGradient id="bgHong3" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#1e1035"/>
+      <stop offset="100%" stop-color="#0a0515"/>
+    </linearGradient>
+    <radialGradient id="cyberGlow3" cx="50%" cy="40%" r="50%">
+      <stop offset="0%" stop-color="#818cf8" stop-opacity="0.4"/>
+      <stop offset="100%" stop-color="#1e1035" stop-opacity="0"/>
+    </radialGradient>
+  </defs>
+  <rect width="600" height="600" fill="url(#bgHong3)"/>
+  <circle cx="300" cy="240" r="160" fill="url(#cyberGlow3)"/>
+  <g transform="translate(220, 150)" stroke="#818cf8" stroke-width="6" fill="none" stroke-linecap="round" stroke-linejoin="round">
+    <rect x="35" y="35" width="90" height="90" rx="16" fill="#312e81" stroke="#818cf8" stroke-width="6"/>
+    <rect x="55" y="55" width="50" height="50" rx="8" fill="#4338ca" stroke="#a5b4fc" stroke-width="4"/>
+    <text x="80" y="87" text-anchor="middle" font-family="monospace" font-size="22" font-weight="900" fill="#ffffff" stroke="none">AI</text>
+    <line x1="55" y1="20" x2="55" y2="35"/>
+    <line x1="80" y1="20" x2="80" y2="35"/>
+    <line x1="105" y1="20" x2="105" y2="35"/>
+    <line x1="55" y1="125" x2="55" y2="140"/>
+    <line x1="80" y1="125" x2="80" y2="140"/>
+    <line x1="105" y1="125" x2="105" y2="140"/>
+    <line x1="20" y1="55" x2="35" y2="55"/>
+    <line x1="20" y1="80" x2="35" y2="80"/>
+    <line x1="20" y1="105" x2="35" y2="105"/>
+    <line x1="125" y1="55" x2="140" y2="55"/>
+    <line x1="125" y1="80" x2="140" y2="80"/>
+    <line x1="125" y1="105" x2="140" y2="105"/>
+  </g>
+  <text x="300" y="470" text-anchor="middle" font-family="Plus Jakarta Sans, Arial, sans-serif" font-size="34" font-weight="700" fill="#e0e7ff">Inti Kognitif AI</text>
+  <text x="300" y="515" text-anchor="middle" font-family="Plus Jakarta Sans, Arial, sans-serif" font-size="20" font-weight="500" fill="#a5b4fc">Honglonglong Robotics &amp; AI</text>
+  <text x="300" y="555" text-anchor="middle" font-family="Plus Jakarta Sans, Arial, sans-serif" font-size="16" fill="#818cf8" opacity="0.8">Prosesor Neural Quantum Core</text>
+</svg>
